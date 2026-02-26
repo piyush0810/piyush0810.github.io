@@ -3510,16 +3510,22 @@ input, select, textarea {
 		-webkit-justify-content: -webkit-flex-end;
 		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
-		pointer-events: none;
+		pointer-events: auto;
 		-moz-user-select: none;
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		height: 20rem;
-		padding-bottom: 8rem;
-		position: relative;
-		text-align: center;
-		z-index: 2;
+		height: 6rem;
+		padding: 1rem 2rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		text-align: left;
+		z-index: 1000;
+		background: rgba(24, 31, 39, 0.95);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 		#header input, #header select, #header textarea {
@@ -3558,22 +3564,24 @@ input, select, textarea {
 		}
 
 		#header .logo {
-			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
-			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
-			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
-			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 			pointer-events: auto;
 			border-style: solid;
 			border-color: #ffffff;
-			border-width: 5px !important;
+			border-width: 2px !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
-			font-size: 2.25rem;
+			font-size: 1.5rem;
 			font-weight: 900;
 			letter-spacing: 0.075em;
 			line-height: 1;
-			padding: 1rem 1.75rem;
+			padding: 0.5rem 1rem;
 			text-transform: uppercase;
 			visibility: visible;
+			align-self: flex-start;
+			margin: 0;
 		}
 
 			#header .logo:hover {
@@ -3584,8 +3592,17 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#header {
-				height: 14rem;
-				padding-bottom: 4rem;
+				height: 5rem;
+				padding: 0.75rem 1.5rem;
+			}
+
+			#header .logo {
+				font-size: 1.25rem;
+				padding: 0.4rem 0.8rem;
+			}
+
+			#main {
+				padding-top: 5rem;
 			}
 
 		}
@@ -3593,13 +3610,19 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding-bottom: 3rem;
+				height: 4rem;
+				padding: 0.5rem 1rem;
 			}
 
 				#header .logo {
-					font-size: 1.75rem;
-					border-width: 3px !important;
+					font-size: 1.1rem;
+					border-width: 1px !important;
+					padding: 0.3rem 0.6rem;
 				}
+
+			#main {
+				padding-top: 4rem;
+			}
 
 		}
 
@@ -3759,8 +3782,9 @@ input, select, textarea {
 		background-color: #ffffff;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
-		max-width: 72rem;
+		padding-top: 6rem;
+		width: 65rem;
+		max-width: 100%;
 		z-index: 2;
 	}
 
